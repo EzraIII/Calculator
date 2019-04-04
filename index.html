@@ -1,68 +1,31 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8">
+    <meta charset='utf-8'>
     <title>Calculator</title>
-    <script type="text/javascript">
-        let string = '';
-        let lastString = '';
-        let lastIsSymbol = false;
-
-        console.log('0')
-        function autoFix() {
-            if(string == '0') {
-                string = '';
-            }
-            if(string == '') {
-                console.log('0');
-            } else {
-                console.log(string);
-            }
-        }
-        function myFunction(character, symbol) {
-
-            if(lastIsSymbol&&symbol) {
-                string = lastString + character;
-            } else {
-                lastString = string;
-                string = string + character;
-            }
-            lastIsSymbol = symbol;
-            autoFix();
-        }
-        function calculate() {
-            if (lastIsSymbol) {
-                string = String(eval(lastString))
-            } else {
-                string = String(eval(string));
-            }
-            lastIsSymbol = false;
-            autoFix();
-        }
-        function clearString() {
-            string = '';
-            autoFix();
-        }
-    </script>
+    <script type='text/javascript' src='theJavaScript.js'></script>
+    <link rel='stylesheet' type='text/css' href='theCSS.css'>
 </head>
 <body>
-    <p>I am a programming apprentice.</p>
-    <button onclick="myFunction('+', true)">+</button>
-    <button onclick="myFunction('-', true)">-</button>
-    <button onclick="myFunction('/', true)">/</button>
-    <button onclick="myFunction('*', true)">*</button>
-    <button onclick="myFunction('.', true)">.</button>
-    <button onclick="myFunction('1', false)">1</button>
-    <button onclick="myFunction('2', false)">2</button>
-    <button onclick="myFunction('3', false)">3</button>
-    <button onclick="myFunction('4', false)">4</button>
-    <button onclick="myFunction('5', false)">5</button>
-    <button onclick="myFunction('6', false)">6</button>
-    <button onclick="myFunction('7', false)">7</button>
-    <button onclick="myFunction('8', false)">8</button>
-    <button onclick="myFunction('9', false)">9</button>
-    <button onclick="myFunction('0', false)">0</button>
-    <button onclick="calculate()">=</button>
-    <button onclick="clearString()">Clear</button>
+    <h1 align='center'><span id="myText">0</span></h1>
+        <div class='btn-group'>
+            <button class='button' onclick="myFunction('+', true)">+</button>
+            <button class='button' onclick="myFunction('-', true)">-</button>
+            <button class='button' onclick="myFunction('/', true)">/</button>
+            <button class='button' onclick="myFunction('*', true)">*</button>
+            <button class='button' onclick="myFunction('.', true)">.</button>
+            <button class='button' onclick="myFunction('1', false)">1</button>
+            <button class='button' onclick="myFunction('2', false)">2</button>
+            <button class='button' onclick="myFunction('3', false)">3</button>
+            <button class='button' onclick="myFunction('4', false)">4</button>
+            <button class='button' onclick="myFunction('5', false)">5</button>
+            <button class='button' onclick="myFunction('6', false)">6</button>
+            <button class='button' onclick="myFunction('7', false)">7</button>
+            <button class='button' onclick="myFunction('8', false)">8</button>
+            <button class='button' onclick="myFunction('9', false)">9</button>
+            <button class='button' onclick="myFunction('0', false)">0</button>
+            <button class='button' onclick="calculate()">=</button>
+            <button class='button' onclick="clearString()">Clear</button>
+        </div>
 </body>
 </html>
