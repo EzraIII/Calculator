@@ -7,21 +7,21 @@
         let string = '';
         let lastString = '';
         let lastIsSymbol = false;
-
-        console.log('0')
         function autoFix() {
             if(string == '0') {
                 string = '';
             }
             if(string == '') {
-                console.log('0');
+                document.getElementById("myText").innerHTML = '0';
             } else {
-                console.log(string);
+                document.getElementById("myText").innerHTML = string;
             }
         }
         function myFunction(character, symbol) {
-
-            if(lastIsSymbol&&symbol) {
+            if(string=='' && symbol) {
+                lastString = string;
+                string = '0' + character;
+            } else if(lastIsSymbol&&symbol) {
                 string = lastString + character;
             } else {
                 lastString = string;
@@ -46,7 +46,7 @@
     </script>
 </head>
 <body>
-    <p>I am a programming apprentice.</p>
+    <h1><span id="myText">0</span></h1>
     <button onclick="myFunction('+', true)">+</button>
     <button onclick="myFunction('-', true)">-</button>
     <button onclick="myFunction('/', true)">/</button>
