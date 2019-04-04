@@ -18,11 +18,12 @@
             }
         }
         function myFunction(character, symbol) {
+            if(lastIsSymbol&&symbol) {
+                string = lastString;
+            }
             if(string=='' && symbol) {
                 lastString = string;
                 string = '0' + character;
-            } else if(lastIsSymbol&&symbol) {
-                string = lastString + character;
             } else {
                 lastString = string;
                 string = string + character;
@@ -31,6 +32,9 @@
             autoFix();
         }
         function calculate() {
+            if(string=='') {
+                string = '0';
+            }
             if (lastIsSymbol) {
                 string = String(eval(lastString))
             } else {
