@@ -1,43 +1,64 @@
-let string = '';
-let lastString = '';
-let lastIsSymbol = false;
+let firstNumber = '0';
+let operation = '';
+let secondNumber = '';
+let hasDecimalPoint = false;
 function autoFix() {
-    if(string == '0') {
-        string = '';
-    }
-    if(string == '') {
-        document.getElementById("myText").innerHTML = '0';
+    if(operation!='') {
+        document.getElementById("myText").innerHTML = firstNumber + ' ' + operation + ' ' + secondNumber;
     } else {
-        document.getElementById("myText").innerHTML = string;
+        document.getElementById("myText").innerHTML = firstNumber;
     }
-}
-function myFunction(character, symbol) {
-    if(lastIsSymbol&&symbol) {
-        string = lastString;
-    }
-    if(string=='' && symbol) {
-        lastString = string;
-        string = '0' + character;
-    } else {
-        lastString = string;
-        string = string + character;
-    }
-    lastIsSymbol = symbol;
-    autoFix();
 }
 function calculate() {
-    if(string=='') {
-        string = '0';
-    }
-    if (lastIsSymbol) {
-        string = String(eval(lastString))
-    } else {
-        string = String(eval(string));
-    }
-    lastIsSymbol = false;
+    firstNumber = String(eval(firstNumber + operation + secondNumber));
+    operation = '';
+    secondNumber = '';
+    hasDecimalPoint = false;
     autoFix();
 }
 function clearString() {
-    string = '';
+    firstNumber = '0';
+    operation = '';
+    secondNumber = '';
+    hasDecimalPoint = false;
+    autoFix();
+}
+function myFunction(character, isOperation) {
+    if(operation!='') {
+        if(isOperation) {
+            calculate();
+            operation = character;
+            secondNumber = '0';
+            hasDecimalPoint = false;
+        } else if(character=='.') {
+            if(hasDecimalPoint==false) {
+                secondNumber = secondNumber + character;
+                hasDecimalPoint = true;
+            }
+        } else {
+            if(secondNumber=='0') {
+                secondNumber = character;
+            } else {
+                secondNumber = secondNumber + character;
+            }
+        }
+    } else {
+        if(isOperation) {
+            operation = character;
+            secondNumber = '0';
+            hasDecimalPoint = false;
+        } else if(character=='.') {
+            if(hasDecimalPoint==false) {
+                firstNumber = firstNumber + character;
+                hasDecimalPoint = true;
+            }
+        } else {
+            if(firstNumber=='0') {
+                firstNumber = character;
+            } else {
+                firstNumber = firstNumber + character;
+            }
+        }
+    }
     autoFix();
 }
