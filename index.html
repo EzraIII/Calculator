@@ -8,24 +8,32 @@
 </head>
 <body>
     <div class='btn-group'>
-        <p class='textA' id='myText'>0</p>
-        <button class='button btnPlus' onclick="addOperation('+')">+</button>
-        <button class='button btnMinus' onclick="addOperation('-')">-</button>
-        <button class='button btnDivide' onclick="addOperation('/')">/</button>
-        <button class='button btnMultiply' onclick="addOperation('*')">*</button>
-        <button class='button btnDecimal' onclick="addDecimalPoint()">.</button>
-        <button class='button btnOne' onclick="addNumber('1')">1</button>
-        <button class='button btnTwo' onclick="addNumber('2')">2</button>
-        <button class='button btnThree' onclick="addNumber('3')">3</button>
-        <button class='button btnFour' onclick="addNumber('4')">4</button>
-        <button class='button btnFive' onclick="addNumber('5')">5</button>
-        <button class='button btnSix' onclick="addNumber('6')">6</button>
-        <button class='button btnSeven' onclick="addNumber('7')">7</button>
-        <button class='button btnEight' onclick="addNumber('8')">8</button>
-        <button class='button btnNine' onclick="addNumber('9')">9</button>
-        <button class='button btnZero' onclick="addNumber('0')">0</button>
-        <button class='button btnEquals' onclick="calculate()">=</button>
-        <button class='button btnClear' onclick="clearString()">C</button>
+        <p id='display' class='display'>0</p>
+        <img class='topImage' src="PNGs/top area.png"/>
+        <button class='button btnPercent'><img id="img%" src="PNGs/Buttons/%.png"/></button>
+        <button class='button btnParentheses'><img id="img( )" src="PNGs/Buttons/( ).png"/></button>
+        <button class='button btnPlusOrMinus'><img id="img±" src="PNGs/Buttons/±.png"/></button>
+        <button class='button btnSqrt'><img id="img√" src="PNGs/Buttons/√.png"/></button>
+        <button class='button btnBackspace'><img id="img⌫" src="PNGs/Buttons/⌫.png"/></button>
+        <button class='button btnMR'><img id="imgMR" src="PNGs/Buttons/MR.png"/></button>
+        <button class='button btnMS'><img id="imgMS" src="PNGs/Buttons/MS.png"/></button>
+        <button class='button btnPlus' onclick="addOperation('+')"><img id="img+" src="PNGs/Buttons/+.png"/></button>
+        <button class='button btnMinus' onclick="addOperation('-')"><img id="img-" src="PNGs/Buttons/-.png"/></button>
+        <button class='button btnDivide' onclick="addOperation('/')"><img id="img÷" src="PNGs/Buttons/÷.png"/></button>
+        <button class='button btnMultiply' onclick="addOperation('*')"><img id="img×" src="PNGs/Buttons/×.png"/></button>
+        <button class='button btnDecimal' onclick="addDecimalPoint()"><img id="img'.'" src="PNGs/Buttons/'.'.png"/></button>
+        <button class='button btnOne' onclick="addNumber('1')"><img id="img1" src="PNGs/Buttons/1.png"/></button>
+        <button class='button btnTwo' onclick="addNumber('2')"><img id="img2" src="PNGs/Buttons/2.png"/></button>
+        <button class='button btnThree' onclick="addNumber('3')"><img id="img3" src="PNGs/Buttons/3.png"/></button>
+        <button class='button btnFour' onclick="addNumber('4')"><img id="img4" src="PNGs/Buttons/4.png"/></button>
+        <button class='button btnFive' onclick="addNumber('5')"><img id="img5" src="PNGs/Buttons/5.png"/></button>
+        <button class='button btnSix' onclick="addNumber('6')"><img id="img6" src="PNGs/Buttons/6.png"/></button>
+        <button class='button btnSeven' onclick="addNumber('7')"><img id="img7" src="PNGs/Buttons/7.png"/></button>
+        <button class='button btnEight' onclick="addNumber('8')"><img id="img8" src="PNGs/Buttons/8.png"/></button>
+        <button class='button btnNine' onclick="addNumber('9')"><img id="img9" src="PNGs/Buttons/9.png"/></button>
+        <button class='button btnZero' onclick="addNumber('0')"><img id="img0" src="PNGs/Buttons/0.png"/></button>
+        <button class='button btnEquals' onclick="calculate()"><img id="img=" src="PNGs/Buttons/=.png"/></button>
+        <button class='button btnAC' onclick="clearString()"><img id="imgAC" src="PNGs/Buttons/AC.png"/></button>
     </div>
 </body>
 </html>

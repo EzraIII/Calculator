@@ -1,153 +1,136 @@
+main {
+    margin: auto;
+}
 body {
     background: #DAD7D7;
 }
+p {
+    margin-block-start: 0px;
+    margin-block-end: 0px;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
 
-.textA {
-    place-self: center;
-    text-align: center;
-    grid-area: textA;
-    font-size: 75px;
-    width: 900px;
-    height: 90px;
-    background-color: white;
-    border-radius: 10px;
+.display {
+    display: flex;
+    width: 292px; /* Hard-coding this won't scale well with screen sizes */ 
+    height: 31px;
+    grid-area: 2/1/3/5;
+    z-index: 2;
+    justify-content: center;
+    font-family: calibri;
+    color: white;
+    font-size: 31px;
     white-space: nowrap;
+}
+.topImage {
+    width: 292px; /* Can use CSS Variable */
+    height: 192px;
+    grid-area: topImage;
+}
+.btnMS {
+    grid-area: btnMS;
+}
+.btnMR {
+    grid-area: btnMR;
+}
+.btnParentheses {
+    grid-area: btnParentheses;
+}
+.btnPercent {
+    grid-area: btnPercent;
+}
+.btnSqrt {
+    grid-area: btnSqrt;
+}
+.btnPlusOrMinus {
+    grid-area: btnPlusOrMinus;
+}
+.btnBackspace {
+    grid-area: btnBackspace;
 }
 .btnPlus {
     grid-area: btnPlus;
-    width: 190px;
-    height: 190px;
-    background-color: #1A1A1A;
-    color: white;
 }
 .btnMinus {
     grid-area: btnMinus;
-    width: 190px;
-    height: 190px;
-    background-color: #1A1A1A;
-    color: white;
 }
 .btnDivide {
     grid-area: btnDivide;
-    width: 190px;
-    height: 190px;
-    background-color: #1A1A1A;
-    color: white;
 }
 .btnMultiply {
     grid-area: btnMultiply;
-    width: 190px;
-    height: 190px;
-    background-color: #1A1A1A;
-    color: white;
 }
 .btnDecimal {
     grid-area: btnDecimal;
-    width: 190px;
-    height: 190px;
-    background-color: #41474D;
-    color: white;
 }
 .btnOne {
     grid-area: btnOne;
-    width: 190px;
-    height: 190px;
-    background-color: #41474D;
-    color: white;
 }
 .btnTwo {
     grid-area: btnTwo;
-    width: 190px;
-    height: 190px;
-    background-color: #41474D;
-    color: white;
 }
 .btnThree {
     grid-area: btnThree;
-    width: 190px;
-    height: 190px;
-    background-color: #41474D;
-    color: white;
 }
 .btnFour {
     grid-area: btnFour;
-    width: 190px;
-    height: 190px;
-    background-color: #41474D;
-    color: white;
 }
 .btnFive {
     grid-area: btnFive;
-    width: 190px;
-    height: 190px;
-    background-color: #41474D;
-    color: white;
 }
 .btnSix {
     grid-area: btnSix;
-    width: 190px;
-    height: 190px;
-    background-color: #41474D;
-    color: white;
 }
 .btnSeven {
     grid-area: btnSeven;
-    width: 190px;
-    height: 190px;
-    background-color: #41474D;
-    color: white;
 }
 .btnEight {
     grid-area: btnEight;
-    width: 190px;
-    height: 190px;
-    background-color: #41474D;
-    color: white;
 }
 .btnNine {
     grid-area: btnNine;
-    width: 190px;
-    height: 190px;
-    background-color: #41474D;
-    color: white;
 }
 .btnZero {
     grid-area: btnZero;
-    width: 383px;
-    height: 190px;
-    background-color: #41474D;
-    color: white;
 }
 .btnEquals {
     grid-area: btnEquals;
-    width: 190px;
-    height: 383px;
-    background-color: #1A1A1A;
-    color: white;
 }
-.btnClear {
-    grid-area: btnClear;
-    width: 190px;
-    height: 383px;
-    background-color: #1A1A1A;
-    color: white;
+.btnAC {
+    grid-area: btnAC;
 }
 
 .btn-group {
     display: grid;
-    grid-template-columns: 193px 193px 193px 193px 193px;
-    grid-template-rows: 125px 193px 193px 193px 193px;
+    grid-template-columns: 73px 73px 73px 73px;
+    grid-template-rows: 87px 31px 74px 55px 55px 55px 55px 55px 55px;
     grid-template-areas:
-        'textA textA textA textA textA'
-        'btnOne btnTwo btnThree btnPlus btnClear'
-        'btnFour btnFive btnSix btnMinus btnClear'
-        'btnSeven btnEight btnNine btnMultiply btnEquals'
-        'btnZero btnZero btnDecimal btnDivide btnEquals';
+        'topImage topImage topImage topImage'
+        'topImage topImage topImage topImage'
+        'topImage topImage topImage topImage'
+        'btnMS btnMR btnParentheses btnBackspace'
+        'btnAC btnPlusOrMinus btnPercent btnSqrt'
+        'btnSeven btnEight btnNine btnDivide'
+        'btnFour btnFive btnSix btnMultiply'
+        'btnOne btnTwo btnThree btnMinus'
+        'btnZero btnDecimal btnEquals btnPlus';
     justify-content: center;
 }
 
 .btn-group .button {
-    place-self: center;
-    font-size: 50px;
-    border-radius: 10px;
+    width: 73px;
+    height: 55px;
+    padding: 0px;
+    cursor: pointer;
+    border: none;
+}
+.btn-group .button:hover {
+    z-index: 2;
+    transition-duration: 0.2s;
+    
+    filter: drop-shadow(0px 0px 5px #0E141C);
+}
+.btn-group .button:focus {
+    outline:none;
 }
