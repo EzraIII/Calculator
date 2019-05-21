@@ -1,6 +1,6 @@
 :root {
     --actual-height: min(99.7vh, 178vw);
-    --total-width: 100vw;
+    --total-width: 56vh;
     --total-height: 100vh;
     --privious-pixel-height: var(--total-height)/522;
 }
@@ -26,7 +26,7 @@ p {
     justify-content: center;
     font-family: calibri;
     color: white;
-    font-size: 5em;
+    font-size: 6vh;
     white-space: nowrap;
 }
 .topImage {
@@ -125,7 +125,7 @@ p {
 }
 
 .btn-group .button {
-    width: 25vw;
+    width: var(--total-width)/4;
     height: 10.5vh;
     padding: 0px;
     cursor: pointer;
@@ -142,5 +142,5 @@ p {
 }
 .btn-group .button img {
     height: 10.5vh;
-    width: 25vw;
+    width: var(--total-width)/4;
 }
